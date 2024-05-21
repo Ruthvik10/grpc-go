@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package average;
+
+option go_package = "github.com/Ruthvik10/grpc-go/calculator/proto";
+
+message AvgRequest {
+    int32 num = 1;
+}
+
+message AvgResponse {
+    double avg = 1;
+}
+
+service AvgService {
+    rpc Average(stream AvgRequest) returns (AvgResponse);
+}

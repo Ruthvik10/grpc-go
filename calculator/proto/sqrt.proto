@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package sqrt;
+
+option go_package = "github.com/Ruthvik10/grpc-go/calculator/proto";
+
+message SqrtRequest {
+    int32 num = 1;
+}
+
+message SqrtResponse {
+    double res = 1;
+}
+
+service SqrtService {
+    rpc Sqrt (SqrtRequest) returns (SqrtResponse);
+}
